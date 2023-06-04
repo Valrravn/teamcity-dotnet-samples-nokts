@@ -138,7 +138,6 @@ object Building_BuildConsoleWebLinuxX64 : BuildType({
 
     triggers {
         vcs {
-            enabled = false
         }
     }
 
