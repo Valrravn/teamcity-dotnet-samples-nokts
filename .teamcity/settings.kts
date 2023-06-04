@@ -219,6 +219,7 @@ object Building_BuildDesktopWindows : BuildType({
     """.trimIndent()
 
     params {
+        param("system.PublishDir", "../bin/Clock.Desktop/win/")
         param("system.AppxPackageDir", "../bin/Clock.Desktop.Uwp/win/")
     }
 
