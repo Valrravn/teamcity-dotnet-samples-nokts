@@ -42,8 +42,6 @@ object Building_1 : BuildType({
     id("Building")
     name = "Build All"
 
-    type = BuildTypeSettings.Type.COMPOSITE
-
     vcs {
         root(DslContext.settingsRoot)
 
