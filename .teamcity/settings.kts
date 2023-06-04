@@ -78,7 +78,13 @@ object Building_1 : BuildType({
                 artifactRules = "**/*.* => ."
             }
         }
-        snapshot(Building_BuildDesktopWindows) {
+        dependency(Building_BuildDesktopWindows) {
+            snapshot {
+            }
+
+            artifacts {
+                artifactRules = "**/*.* => ."
+            }
         }
     }
 })
