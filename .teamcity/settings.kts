@@ -42,6 +42,8 @@ object Building_1 : BuildType({
     id("Building")
     name = "Build All"
 
+    artifactRules = "bin/**/*.* => ."
+
     vcs {
         root(DslContext.settingsRoot)
 
