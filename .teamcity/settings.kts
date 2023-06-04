@@ -220,6 +220,7 @@ object Building_BuildDesktopWindows : BuildType({
 
     params {
         param("system.PublishDir", "../bin/Clock.Desktop/win/")
+        param("system.configuration", "Release")
         param("system.AppxPackageDir", "../bin/Clock.Desktop.Uwp/win/")
     }
 
