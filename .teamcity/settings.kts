@@ -228,7 +228,7 @@ object Building_BuildDesktopWindows : BuildType({
                 Clock.Desktop/Clock.Desktop.csproj
                 Clock.Desktop.Uwp/Clock.Desktop.Uwp.csproj
             """.trimIndent()
-            version = DotnetMsBuildStep.MSBuildVersion.V17
+            version = DotnetMsBuildStep.MSBuildVersion.V16
             targets = "Restore;Rebuild;Publish"
             sdk = "7"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
