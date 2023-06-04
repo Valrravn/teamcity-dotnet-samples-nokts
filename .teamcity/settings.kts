@@ -163,6 +163,8 @@ object Building_BuildConsoleWebLinuxX64 : BuildType({
 object Building_BuildConsoleWebWinX64 : BuildType({
     name = "Build console & web (win-x64)"
 
+    artifactRules = "bin => bin"
+
     vcs {
         root(DslContext.settingsRoot)
     }
