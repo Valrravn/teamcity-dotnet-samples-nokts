@@ -197,6 +197,10 @@ object Building_BuildConsoleWebWinX64 : BuildType({
         snapshot(Building_Build) {
         }
     }
+
+    requirements {
+        exists("DotNetCoreRuntime7.0_Path")
+    }
 })
 
 object Building_BuildDesktopWindows : BuildType({
