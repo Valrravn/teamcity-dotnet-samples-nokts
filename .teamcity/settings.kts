@@ -210,6 +210,11 @@ object Building_BuildConsoleWebWinX64 : BuildType({
 object Building_BuildDesktopWindows : BuildType({
     name = "Build Desktop (Windows)"
 
+    artifactRules = """
+        bin/Clock.Desktop/win/**/*.* => bin/Clock.Desktop.zip
+        bin/Clock.Desktop.Uwp/win/**/*.* => bin/Clock.Desktop.Uwp.zip
+    """.trimIndent()
+
     vcs {
         root(DslContext.settingsRoot)
     }
