@@ -1,0 +1,132 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.Tests/Clock.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.Tests/Clock.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.Tests/Clock.Tests.csproj",
+        "projectName": "Clock.Tests",
+        "projectPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.Tests/Clock.Tests.csproj",
+        "packagesPath": "/Users/Dmitrii.Korovin/.nuget/packages/",
+        "outputPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/Dmitrii.Korovin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj": {
+                "projectPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.8.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.15.1, )"
+            },
+            "Shouldly": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj",
+        "projectName": "TeamCity.Clock",
+        "projectPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj",
+        "packagesPath": "/Users/Dmitrii.Korovin/.nuget/packages/",
+        "outputPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/Dmitrii.Korovin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard1.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.2": {
+            "targetAlias": "netstandard1.2",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard1.2": {
+          "targetAlias": "netstandard1.2",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.1, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

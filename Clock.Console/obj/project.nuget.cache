@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "yXYhbdpeEo88vVrDenzREcLYQIZD+w415A9UEbFu81w6KNvhCdR2cBGuJFSxnVNNerkIAnJVUyQ4+jY707mTWw==",
+  "success": true,
+  "projectFilePath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.Console/Clock.Console.csproj",
+  "expectedPackageFiles": [
+    "/Users/Dmitrii.Korovin/.nuget/packages/ioc.container/1.3.3/ioc.container.1.3.3.nupkg.sha512",
+    "/Users/Dmitrii.Korovin/.nuget/packages/microsoft.visualstudio.azure.containers.tools.targets/1.10.9/microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

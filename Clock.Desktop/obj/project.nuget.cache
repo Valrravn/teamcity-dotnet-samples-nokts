@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "icHDQWwQ5rvd4C94E39vfnrdDxa1GBy7rSyBarPHQwLUCiqOiUObP83z0uUmvMaidH5DQcKYlhTxeAU9wJzM9Q==",
+  "success": true,
+  "projectFilePath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.Desktop/Clock.Desktop.csproj",
+  "expectedPackageFiles": [
+    "/Users/Dmitrii.Korovin/.nuget/packages/ioc.container/1.3.3/ioc.container.1.3.3.nupkg.sha512"
+  ],
+  "logs": []
+}

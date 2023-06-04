@@ -1,0 +1,106 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/Clock.IoC.csproj": {}
+  },
+  "projects": {
+    "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/Clock.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/Clock.IoC.csproj",
+        "projectName": "TeamCity.Clock.IoC",
+        "projectPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/Clock.IoC.csproj",
+        "packagesPath": "/Users/Dmitrii.Korovin/.nuget/packages/",
+        "outputPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/Dmitrii.Korovin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard1.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.2": {
+            "targetAlias": "netstandard1.2",
+            "projectReferences": {
+              "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj": {
+                "projectPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard1.2": {
+          "targetAlias": "netstandard1.2",
+          "dependencies": {
+            "IoC.Container": {
+              "target": "Package",
+              "version": "[1.3.3, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.1, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj",
+        "projectName": "TeamCity.Clock",
+        "projectPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/Clock.csproj",
+        "packagesPath": "/Users/Dmitrii.Korovin/.nuget/packages/",
+        "outputPath": "/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/Dmitrii.Korovin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard1.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.2": {
+            "targetAlias": "netstandard1.2",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard1.2": {
+          "targetAlias": "netstandard1.2",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.1, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/bin/Debug/netstandard1.2/Clock.IoC.deps.json
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/bin/Debug/netstandard1.2/Clock.IoC.dll
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/bin/Debug/netstandard1.2/Clock.IoC.pdb
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/bin/Debug/netstandard1.2/Clock.dll
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/bin/Debug/netstandard1.2/Clock.pdb
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/obj/Debug/netstandard1.2/Clock.IoC.csproj.AssemblyReference.cache
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/obj/Debug/netstandard1.2/Clock.IoC.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/obj/Debug/netstandard1.2/Clock.IoC.AssemblyInfoInputs.cache
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/obj/Debug/netstandard1.2/Clock.IoC.AssemblyInfo.cs
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/obj/Debug/netstandard1.2/Clock.IoC.csproj.CoreCompileInputs.cache
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/obj/Debug/netstandard1.2/Clock.IoC.csproj.CopyComplete
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/obj/Debug/netstandard1.2/Clock.IoC.dll
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock.IoC/obj/Debug/netstandard1.2/Clock.IoC.pdb

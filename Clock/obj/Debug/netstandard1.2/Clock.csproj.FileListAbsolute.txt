@@ -1,0 +1,10 @@
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/bin/Debug/netstandard1.2/Clock.deps.json
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/bin/Debug/netstandard1.2/Clock.dll
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/bin/Debug/netstandard1.2/Clock.pdb
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/obj/Debug/netstandard1.2/Clock.csproj.AssemblyReference.cache
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/obj/Debug/netstandard1.2/Clock.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/obj/Debug/netstandard1.2/Clock.AssemblyInfoInputs.cache
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/obj/Debug/netstandard1.2/Clock.AssemblyInfo.cs
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/obj/Debug/netstandard1.2/Clock.csproj.CoreCompileInputs.cache
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/obj/Debug/netstandard1.2/Clock.dll
+/Users/Dmitrii.Korovin/Work/TC-DotNet-Samples/Clock/obj/Debug/netstandard1.2/Clock.pdb
