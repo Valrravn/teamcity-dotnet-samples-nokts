@@ -218,6 +218,10 @@ object Building_BuildDesktopWindows : BuildType({
         bin/Clock.Desktop.Uwp/win/**/*.* => bin/Clock.Desktop.Uwp.zip
     """.trimIndent()
 
+    params {
+        param("system.AppxPackageDir", "../bin/Clock.Desktop.Uwp/win/")
+    }
+
     vcs {
         root(DslContext.settingsRoot)
     }
