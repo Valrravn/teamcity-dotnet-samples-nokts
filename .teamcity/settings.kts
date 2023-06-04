@@ -221,6 +221,7 @@ object Building_BuildDesktopWindows : BuildType({
     params {
         param("system.PublishDir", "../bin/Clock.Desktop/win/")
         param("system.VersionPrefix", "1.0.0")
+        param("system.VersionSuffix", "%build.number%")
         param("system.AppxPackageDir", "../bin/Clock.Desktop.Uwp/win/")
         param("system.configuration", "Release")
     }
