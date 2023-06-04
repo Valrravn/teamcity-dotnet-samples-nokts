@@ -62,7 +62,13 @@ object Building_1 : BuildType({
     }
 
     dependencies {
-        snapshot(Building_BuildConsoleWebLinuxX64) {
+        dependency(Building_BuildConsoleWebLinuxX64) {
+            snapshot {
+            }
+
+            artifacts {
+                artifactRules = "**/*.* => ."
+            }
         }
         dependency(Building_BuildConsoleWebWinX64) {
             snapshot {
