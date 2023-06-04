@@ -273,11 +273,6 @@ object Building_BuildDesktopWindows : BuildType({
         }
     }
 
-    dependencies {
-        snapshot(Building_Build) {
-        }
-    }
-
     requirements {
         matches("teamcity.agent.jvm.os.family", "Windows")
     }
