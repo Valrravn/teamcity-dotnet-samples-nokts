@@ -52,6 +52,7 @@ object Building_1 : BuildType({
 
     triggers {
         vcs {
+            enabled = false
         }
     }
 
