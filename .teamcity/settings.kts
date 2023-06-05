@@ -43,7 +43,6 @@ object Building_1 : BuildType({
     name = "Build All"
 
     artifactRules = "bin/**/*.* => ."
-    type = BuildTypeSettings.Type.COMPOSITE
 
     vcs {
         root(DslContext.settingsRoot)
