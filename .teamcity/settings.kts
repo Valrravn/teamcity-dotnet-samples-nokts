@@ -258,7 +258,7 @@ object Building_BuildDesktopWindows : BuildType({
             """.trimIndent()
             version = DotnetMsBuildStep.MSBuildVersion.V16
             targets = "Restore;Rebuild;Publish"
-            sdk = "70"
+            sdk = "7"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
     }
