@@ -153,7 +153,7 @@ object Building_BuildConsoleWebLinuxX64 : BuildType({
         }
         dotnetPublish {
             name = "Build web"
-            projects = "Clock.Web/Clock.Web.csprojaaaaaa"
+            projects = "Clock.Web/Clock.Web.csproj"
             runtime = "linux-x64"
             outputDir = "bin/Clock.Web/linux-x64"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
