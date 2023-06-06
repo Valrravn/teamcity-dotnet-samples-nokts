@@ -6,6 +6,7 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetMsBuild
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetPublish
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
+import jetbrains.buildServer.configs.kotlin.projectFeatures.dockerRegistry
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -325,6 +326,15 @@ object DeploymentConfigsProject : Project({
     description = "This subproject contains configurations that carry out delivery"
 
     buildType(DeploymentConfigsProject_DeployConsoleWindows)
+
+    features {
+        dockerRegistry {
+            id = "PROJECT_EXT_5"
+            name = "Docker Registry"
+            userName = "valrravn"
+            password = "credentialsJSON:0ff181ee-cc10-48ac-b5f4-ce50ca2013b4"
+        }
+    }
 })
 
 object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
