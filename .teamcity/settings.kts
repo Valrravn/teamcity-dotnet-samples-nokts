@@ -348,4 +348,9 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
             }
         }
     }
+
+    dependencies {
+        snapshot(Building_BuildConsoleWebWinX64) {
+        }
+    }
 })
