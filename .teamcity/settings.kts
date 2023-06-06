@@ -400,7 +400,7 @@ object DeploymentConfigsProject_DeployConsoleLinux : BuildType({
     }
 
     requirements {
-        contains("teamcity.agent.os.name", "windows-server-2022")
+        contains("teamcity.agent.os.name", "ubuntu-20.04")
     }
 })
 
