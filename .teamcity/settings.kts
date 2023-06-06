@@ -364,12 +364,12 @@ object DeploymentConfigsProject_DeployConsoleLinux : BuildType({
             name = "Build container"
             commandType = build {
                 source = file {
-                    path = "context/console.windows.dockerfile"
+                    path = "context/console.linux.dockerfile"
                 }
                 contextDir = "context"
                 platform = DockerCommandStep.ImagePlatform.Windows
-                namesAndTags = "valrravn/clock-console:nanoserver.ltsc2022"
-                commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:ltsc2022"
+                namesAndTags = "valrravn/clock-console:ubuntu"
+                commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime-deps:5.0-focal"
             }
         }
         dockerCommand {
