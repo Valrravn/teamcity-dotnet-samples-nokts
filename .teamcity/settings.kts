@@ -35,6 +35,7 @@ project {
 
     buildType(Building_1)
 
+    subProject(DeploymentConfigsProject)
     subProject(Building)
 }
 
@@ -315,4 +316,10 @@ object Building_RunTestsLinux : BuildType({
     requirements {
         matches("teamcity.agent.jvm.os.family", "Linux")
     }
+})
+
+
+object DeploymentConfigsProject : Project({
+    name = "Deployment Configurations"
+    description = "This subproject contains configurations that carry out delivery"
 })
