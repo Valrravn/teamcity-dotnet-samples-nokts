@@ -338,5 +338,14 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
                 commandArgs = "mcr.microsoft.com/windows/nanoserver:2004"
             }
         }
+        dockerCommand {
+            name = "Build container"
+            commandType = build {
+                source = file {
+                    path = "context/console.windows.dockerfile"
+                }
+                commandArgs = "--pull"
+            }
+        }
     }
 })
