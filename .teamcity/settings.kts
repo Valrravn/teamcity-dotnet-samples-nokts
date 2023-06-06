@@ -536,13 +536,10 @@ object DeploymentConfigsProject_DeployWebLinux : BuildType({
     }
 
     dependencies {
-        dependency(Building_BuildConsoleWebWinX64) {
-            snapshot {
-            }
-
-            artifacts {
-                artifactRules = "bin => context"
-            }
+        snapshot(Building_BuildConsoleWebLinuxX64) {
+        }
+        artifacts(Building_BuildConsoleWebWinX64) {
+            artifactRules = "bin => context"
         }
     }
 
