@@ -346,10 +346,6 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
 
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
     steps {
         dockerCommand {
             name = "Pull nanoserver"
