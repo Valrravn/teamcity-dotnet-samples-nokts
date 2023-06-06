@@ -328,6 +328,7 @@ object DeploymentConfigsProject : Project({
     description = "This subproject contains configurations that carry out delivery"
 
     buildType(DeploymentConfigsProject_DeployConsoleWindows)
+    buildType(DeploymentConfigsProject_DeployWebWindows)
 
     features {
         dockerRegistry {
@@ -341,6 +342,69 @@ object DeploymentConfigsProject : Project({
 
 object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
     name = "Deploy Console (Windows)"
+
+    enablePersonalBuilds = false
+    type = BuildTypeSettings.Type.DEPLOYMENT
+    maxRunningBuilds = 1
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        dockerCommand {
+            name = "Pull nanoserver"
+            commandType = other {
+                subCommand = "pull"
+                commandArgs = "mcr.microsoft.com/windows/nanoserver:ltsc2022"
+            }
+        }
+        dockerCommand {
+            name = "Build container"
+            commandType = build {
+                source = file {
+                    path = "context/console.windows.dockerfile"
+                }
+                contextDir = "context"
+                platform = DockerCommandStep.ImagePlatform.Windows
+                namesAndTags = "valrravn/clock-console:nanoserver.ltsc2022"
+                commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:ltsc2022"
+            }
+        }
+        dockerCommand {
+            name = "Push container"
+            commandType = push {
+                namesAndTags = "valrravn/clock-console:nanoserver.ltsc2022"
+            }
+        }
+    }
+
+    features {
+        dockerSupport {
+            loginToRegistry = on {
+                dockerRegistryId = "PROJECT_EXT_5"
+            }
+        }
+    }
+
+    dependencies {
+        dependency(Building_BuildConsoleWebWinX64) {
+            snapshot {
+            }
+
+            artifacts {
+                artifactRules = "bin => context"
+            }
+        }
+    }
+
+    requirements {
+        contains("teamcity.agent.os.name", "windows-server-2022")
+    }
+})
+
+object DeploymentConfigsProject_DeployWebWindows : BuildType({
+    name = "Deploy Web (Windows)"
 
     enablePersonalBuilds = false
     type = BuildTypeSettings.Type.DEPLOYMENT
