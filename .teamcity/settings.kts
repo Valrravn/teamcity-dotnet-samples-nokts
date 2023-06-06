@@ -367,7 +367,7 @@ object DeploymentConfigsProject_DeployConsoleLinux : BuildType({
                     path = "context/console.linux.dockerfile"
                 }
                 contextDir = "context"
-                platform = DockerCommandStep.ImagePlatform.Windows
+                platform = DockerCommandStep.ImagePlatform.Linux
                 namesAndTags = "valrravn/clock-console:ubuntu"
                 commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime-deps:5.0-focal"
             }
