@@ -501,10 +501,10 @@ object DeploymentConfigsProject_DeployWebLinux : BuildType({
 
     steps {
         dockerCommand {
-            name = "Pull nanoserver"
+            name = "Pull runtime dependencies"
             commandType = other {
                 subCommand = "pull"
-                commandArgs = "mcr.microsoft.com/windows/runtime-deps:5.0-focal"
+                commandArgs = "mcr.microsoft.com/windows/runtime-deps:7.0"
             }
         }
         dockerCommand {
