@@ -102,6 +102,17 @@ object DeployAll : BuildType({
     enablePersonalBuilds = false
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
+
+    dependencies {
+        snapshot(DeploymentConfigsProject_DeployConsoleLinux) {
+        }
+        snapshot(DeploymentConfigsProject_DeployConsoleWindows) {
+        }
+        snapshot(DeploymentConfigsProject_DeployWebLinux) {
+        }
+        snapshot(DeploymentConfigsProject_DeployWebWindows) {
+        }
+    }
 })
 
 
