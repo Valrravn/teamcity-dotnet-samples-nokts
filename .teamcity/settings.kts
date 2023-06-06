@@ -375,7 +375,7 @@ object DeploymentConfigsProject_DeployConsoleLinux : BuildType({
         dockerCommand {
             name = "Push container"
             commandType = push {
-                namesAndTags = "valrravn/clock-console:nanoserver.ltsc2022"
+                namesAndTags = "valrravn/clock-console:ubuntu"
             }
         }
     }
