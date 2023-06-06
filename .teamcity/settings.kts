@@ -390,7 +390,7 @@ object DeploymentConfigsProject_DeployConsoleLinux : BuildType({
                 contextDir = "context"
                 platform = DockerCommandStep.ImagePlatform.Linux
                 namesAndTags = "valrravn/clock-console:ubuntu"
-                commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime-deps:5.0-focal"
+                commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime-deps:7.0"
             }
         }
         dockerCommand {
