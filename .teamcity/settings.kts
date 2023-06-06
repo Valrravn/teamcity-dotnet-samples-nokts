@@ -426,11 +426,11 @@ object DeploymentConfigsProject_DeployWebWindows : BuildType({
             name = "Build container"
             commandType = build {
                 source = file {
-                    path = "context/console.windows.dockerfile"
+                    path = "context/web.windows.dockerfile"
                 }
                 contextDir = "context"
                 platform = DockerCommandStep.ImagePlatform.Windows
-                namesAndTags = "valrravn/clock-console:nanoserver.ltsc2022"
+                namesAndTags = "valrravn/clock-web:nanoserver.ltsc2022"
                 commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:ltsc2022"
             }
         }
