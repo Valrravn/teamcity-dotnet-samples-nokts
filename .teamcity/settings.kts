@@ -322,4 +322,10 @@ object Building_RunTestsLinux : BuildType({
 object DeploymentConfigsProject : Project({
     name = "Deployment Configurations"
     description = "This subproject contains configurations that carry out delivery"
+
+    buildType(DeploymentConfigsProject_DeployConsoleWindows)
+})
+
+object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
+    name = "Deploy Console (Windows)"
 })
