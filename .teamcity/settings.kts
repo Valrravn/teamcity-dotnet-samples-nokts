@@ -378,8 +378,4 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
             }
         }
     }
-
-    requirements {
-        contains("docker.server.osType", "windows")
-    }
 })
