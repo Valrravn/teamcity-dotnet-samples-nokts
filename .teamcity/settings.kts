@@ -378,7 +378,7 @@ object DeploymentConfigsProject_DeployConsoleLinux : BuildType({
             name = "Pull nanoserver"
             commandType = other {
                 subCommand = "pull"
-                commandArgs = "mcr.microsoft.com/windows/runtime-deps:5.0-focal"
+                commandArgs = "mcr.microsoft.com/dotnet/runtime-deps:7.0"
             }
         }
         dockerCommand {
