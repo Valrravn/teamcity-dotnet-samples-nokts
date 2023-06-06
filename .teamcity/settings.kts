@@ -348,6 +348,12 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
                 commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:2004"
             }
         }
+        dockerCommand {
+            name = "Push container"
+            commandType = push {
+                namesAndTags = "valrravn/clock-console:nanoserver.2004"
+            }
+        }
     }
 
     dependencies {
