@@ -344,7 +344,8 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
                 source = file {
                     path = "context/console.windows.dockerfile"
                 }
-                commandArgs = "--pull"
+                contextDir = "context"
+                commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:2004"
             }
         }
     }
