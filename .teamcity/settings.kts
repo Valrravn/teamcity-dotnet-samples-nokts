@@ -37,6 +37,7 @@ version = "2023.05"
 
 project {
 
+    buildType(DeployAll)
     buildType(Building_1)
 
     subProject(DeploymentConfigsProject)
@@ -93,6 +94,14 @@ object Building_1 : BuildType({
             }
         }
     }
+})
+
+object DeployAll : BuildType({
+    name = "Deploy All"
+
+    enablePersonalBuilds = false
+    type = BuildTypeSettings.Type.DEPLOYMENT
+    maxRunningBuilds = 1
 })
 
 
