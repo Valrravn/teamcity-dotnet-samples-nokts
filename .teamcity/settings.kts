@@ -341,6 +341,10 @@ object DeploymentConfigsProject : Project({
 object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
     name = "Deploy Console (Windows)"
 
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
     steps {
         dockerCommand {
             name = "Pull windows/nanoserver:2004"
