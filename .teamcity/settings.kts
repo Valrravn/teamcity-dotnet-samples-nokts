@@ -2,6 +2,7 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.DotnetMsBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.DotnetTestStep
+import jetbrains.buildServer.configs.kotlin.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetMsBuild
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetPublish
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
@@ -328,4 +329,14 @@ object DeploymentConfigsProject : Project({
 
 object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
     name = "Deploy Console (Windows)"
+
+    steps {
+        dockerCommand {
+            name = "Pull windows/nanoserver:2004"
+            commandType = other {
+                subCommand = "pull"
+                commandArgs = "mcr.microsoft.com/windows/nanoserver:2004"
+            }
+        }
+    }
 })
