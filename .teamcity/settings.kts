@@ -329,6 +329,7 @@ object DeploymentConfigsProject : Project({
 
     buildType(DeploymentConfigsProject_DeployConsoleWindows)
     buildType(DeploymentConfigsProject_DeployConsoleLinux)
+    buildType(DeploymentConfigsProject_DeployWebLinux)
     buildType(DeploymentConfigsProject_DeployWebWindows)
 
     features {
@@ -464,6 +465,69 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
 
     requirements {
         contains("teamcity.agent.os.name", "windows-server-2022")
+    }
+})
+
+object DeploymentConfigsProject_DeployWebLinux : BuildType({
+    name = "Deploy Web (Linux)"
+
+    enablePersonalBuilds = false
+    type = BuildTypeSettings.Type.DEPLOYMENT
+    maxRunningBuilds = 1
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        dockerCommand {
+            name = "Pull nanoserver"
+            commandType = other {
+                subCommand = "pull"
+                commandArgs = "mcr.microsoft.com/windows/runtime-deps:5.0-focal"
+            }
+        }
+        dockerCommand {
+            name = "Build container"
+            commandType = build {
+                source = file {
+                    path = "context/console.linux.dockerfile"
+                }
+                contextDir = "context"
+                platform = DockerCommandStep.ImagePlatform.Linux
+                namesAndTags = "valrravn/clock-console:ubuntu"
+                commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime-deps:5.0-focal"
+            }
+        }
+        dockerCommand {
+            name = "Push container"
+            commandType = push {
+                namesAndTags = "valrravn/clock-console:ubuntu"
+            }
+        }
+    }
+
+    features {
+        dockerSupport {
+            loginToRegistry = on {
+                dockerRegistryId = "PROJECT_EXT_5"
+            }
+        }
+    }
+
+    dependencies {
+        dependency(Building_BuildConsoleWebWinX64) {
+            snapshot {
+            }
+
+            artifacts {
+                artifactRules = "bin => context"
+            }
+        }
+    }
+
+    requirements {
+        contains("teamcity.agent.os.name", "ubuntu-20.04")
     }
 })
 
