@@ -491,11 +491,11 @@ object DeploymentConfigsProject_DeployWebLinux : BuildType({
             name = "Build container"
             commandType = build {
                 source = file {
-                    path = "context/console.linux.dockerfile"
+                    path = "context/web.linux.dockerfile"
                 }
                 contextDir = "context"
                 platform = DockerCommandStep.ImagePlatform.Linux
-                namesAndTags = "valrravn/clock-console:ubuntu"
+                namesAndTags = "valrravn/clock-web:ubuntu"
                 commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime-deps:5.0-focal"
             }
         }
