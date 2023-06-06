@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
+import jetbrains.buildServer.configs.kotlin.buildSteps.DockerCommandStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.DotnetMsBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.DotnetTestStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.dockerCommand
@@ -355,6 +356,7 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
                     path = "context/console.windows.dockerfile"
                 }
                 contextDir = "context"
+                platform = DockerCommandStep.ImagePlatform.Windows
                 commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:2004"
             }
         }
