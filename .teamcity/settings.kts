@@ -502,7 +502,7 @@ object DeploymentConfigsProject_DeployWebLinux : BuildType({
         dockerCommand {
             name = "Push container"
             commandType = push {
-                namesAndTags = "valrravn/clock-console:ubuntu"
+                namesAndTags = "valrravn/clock-web:ubuntu"
             }
         }
     }
