@@ -342,7 +342,6 @@ object DeploymentConfigsProject : Project({
 object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
     name = "Deploy Console (Windows)"
 
-    enablePersonalBuilds = false
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
 
