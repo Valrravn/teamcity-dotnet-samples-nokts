@@ -8,7 +8,6 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetMsBuild
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetPublish
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.projectFeatures.dockerRegistry
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -348,10 +347,6 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
     }
 
     steps {
-        script {
-            name = "ver"
-            scriptContent = "ver"
-        }
         dockerCommand {
             name = "Pull nanoserver"
             commandType = other {
