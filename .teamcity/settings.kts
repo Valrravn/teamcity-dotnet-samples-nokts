@@ -118,6 +118,10 @@ object DeployAll : BuildType({
         snapshot(DeploymentConfigsProject_DeployWebWindows) {
         }
     }
+
+    requirements {
+        equals("deployall.prompt", "true")
+    }
 })
 
 
