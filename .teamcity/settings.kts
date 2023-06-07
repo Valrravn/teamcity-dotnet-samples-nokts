@@ -104,8 +104,8 @@ object DeployAll : BuildType({
     maxRunningBuilds = 1
 
     params {
-        text("deployall.prompt", "", label = """Type "estou.dev.sandbox.teamcity.aws.intellij.net" to trigger the chain""", description = "Please avoid excessive Deploy All runs due to significant resources required to run this chain", display = ParameterDisplay.PROMPT,
-              regex = "estou.dev.sandbox.teamcity.aws.intellij.net", validationMessage = "Test")
+        checkbox("deployall.prompt", "", label = """Confirm the "Build All" configuration run""", description = "Please avoid excessive Deploy All runs due to significant resources required to run this chain", display = ParameterDisplay.PROMPT,
+                  checked = "true", unchecked = "false")
     }
 
     dependencies {
