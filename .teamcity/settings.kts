@@ -8,6 +8,7 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetMsBuild
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetPublish
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.projectFeatures.dockerRegistry
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -106,6 +107,17 @@ object DeployAll : BuildType({
     params {
         checkbox("deployall.prompt", "", label = """Confirm the "Build All" configuration run""", description = "Please avoid excessive Deploy All runs due to significant resources required to run this chain", display = ParameterDisplay.PROMPT,
                   checked = "true", unchecked = "false")
+    }
+
+    steps {
+        script {
+            name = "Confirmation"
+
+            conditions {
+                equals("deployall.prompt", "true")
+            }
+            scriptContent = """echo "%teamcity.build.triggeredBy.username% triggered the DEPLOY ALL configuration""""
+        }
     }
 
     dependencies {
