@@ -103,6 +103,11 @@ object DeployAll : BuildType({
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
 
+    params {
+        checkbox("PromptParameter", "", label = "Prompt parameter", display = ParameterDisplay.PROMPT,
+                  checked = "true", unchecked = "false")
+    }
+
     dependencies {
         snapshot(DeploymentConfigsProject_DeployConsoleLinux) {
         }
