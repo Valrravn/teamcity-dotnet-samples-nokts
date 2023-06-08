@@ -602,7 +602,7 @@ object DeploymentConfigsProject_DeployWebWindows : BuildType({
         dockerCommand {
             name = "Push container"
             commandType = push {
-                namesAndTags = "valrravn/clock-web:nanoserver.ltsc2022"
+                namesAndTags = "valrravn/clock-web:windows"
             }
         }
     }
