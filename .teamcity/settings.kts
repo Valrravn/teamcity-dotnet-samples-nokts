@@ -458,7 +458,7 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
             name = "Pull container"
             commandType = other {
                 subCommand = "pull"
-                commandArgs = "mcr.microsoft.com/dotnet/runtime-deps:7.0"
+                commandArgs = "mcr.microsoft.com/dotnet/runtime:7.0"
             }
         }
         dockerCommand {
