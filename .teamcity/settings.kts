@@ -595,8 +595,8 @@ object DeploymentConfigsProject_DeployWebWindows : BuildType({
                 }
                 contextDir = "context"
                 platform = DockerCommandStep.ImagePlatform.Windows
-                namesAndTags = "valrravn/clock-web:nanoserver.ltsc2022"
-                commandArgs = "--build-arg baseImage=mcr.microsoft.com/windows/nanoserver:ltsc2022"
+                namesAndTags = "valrravn/clock-web:nanoserver.windows"
+                commandArgs = "--build-arg baseImage=mcr.microsoft.com/dotnet/runtime:7.0"
             }
         }
         dockerCommand {
