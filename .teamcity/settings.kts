@@ -581,10 +581,10 @@ object DeploymentConfigsProject_DeployWebWindows : BuildType({
 
     steps {
         dockerCommand {
-            name = "Pull nanoserver"
+            name = "Pull container"
             commandType = other {
                 subCommand = "pull"
-                commandArgs = "mcr.microsoft.com/windows/nanoserver:ltsc2022"
+                commandArgs = "mcr.microsoft.com/dotnet/runtime:7.0"
             }
         }
         dockerCommand {
