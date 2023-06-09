@@ -116,7 +116,18 @@ object DeployAll : BuildType({
             conditions {
                 equals("deployall.prompt", "true")
             }
-            scriptContent = """echo "%teamcity.build.triggeredBy.username% triggered the DEPLOY ALL configuration""""
+            scriptContent = """
+                echo "%teamcity.build.triggeredBy.username% triggered the DEPLOY ALL configuration"
+                echo "Prompt is: %system.deployall.prompt%"
+                
+                ${'$'}Prompt = "%system.deployall.prompt%%"
+                
+                if (${'$'}BuildMode -eq false) {
+                  blablabla wrong code stops the build
+                }
+                
+                echo "Build cancelled"
+            """.trimIndent()
         }
     }
 
