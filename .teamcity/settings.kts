@@ -105,7 +105,7 @@ object DeployAll : BuildType({
     maxRunningBuilds = 1
 
     params {
-        checkbox("deployall.prompt", "false", label = """Confirm the "Build All" configuration run""", description = "Please avoid excessive Deploy All runs due to significant resources required to run this chain", display = ParameterDisplay.PROMPT, readOnly = true,
+        checkbox("system.deployall.prompt", "false", label = """Confirm the "Build All" configuration run""", description = "Please avoid excessive Deploy All runs due to significant resources required to run this chain", display = ParameterDisplay.PROMPT, readOnly = true,
                   checked = "true", unchecked = "false")
     }
 
