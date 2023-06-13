@@ -339,7 +339,7 @@ object Building_BuildDesktopWindows : BuildType({
 })
 
 object Building_BuildingWinDesktopWithParallelTesting : BuildType({
-    name = "Building Win Desktop with Parallel Testing"
+    name = "WinConsole + Parallel Tests"
 
     vcs {
         root(DslContext.settingsRoot)
