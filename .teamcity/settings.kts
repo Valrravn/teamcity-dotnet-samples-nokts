@@ -380,7 +380,7 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
     }
 
     requirements {
-        matches("teamcity.agent.jvm.os.family", "Windows")
+        matches("teamcity.agent.jvm.os.family", "Linux")
     }
 })
 
