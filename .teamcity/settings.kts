@@ -382,8 +382,10 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
 
     requirements {
         matches("teamcity.agent.jvm.os.family", "Linux")
-        startsWith("cloud.amazon.agent-name-prefix", "Ubuntu-20.04")
+        startsWith("cloud.amazon.agent-name-prefix", "Ubuntu-20.04", "RQ_2")
     }
+    
+    disableSettings("RQ_2")
 })
 
 object Building_RunTestsLinux : BuildType({
