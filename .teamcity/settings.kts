@@ -342,6 +342,8 @@ object Building_BuildDesktopWindows : BuildType({
 object Building_BuildingWinDesktopWithParallelTesting : BuildType({
     name = "WinConsole + Parallel Tests"
 
+    artifactRules = "bin => bin"
+
     vcs {
         root(DslContext.settingsRoot)
     }
