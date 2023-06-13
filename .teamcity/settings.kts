@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.dockerSupport
+import jetbrains.buildServer.configs.kotlin.buildFeatures.parallelTests
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.DockerCommandStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.DotnetMsBuildStep
@@ -369,6 +370,12 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
             runtime = "win-x64"
             outputDir = "bin/Clock.Console/win-x64"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
+        }
+    }
+
+    features {
+        parallelTests {
+            numberOfBatches = 3
         }
     }
 })
