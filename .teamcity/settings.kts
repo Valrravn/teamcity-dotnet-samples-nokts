@@ -378,10 +378,6 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
             numberOfBatches = 3
         }
     }
-
-    requirements {
-        contains("teamcity.agent.name", "Ubuntu")
-    }
 })
 
 object Building_RunTestsLinux : BuildType({
