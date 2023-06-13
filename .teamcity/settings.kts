@@ -352,6 +352,13 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
             sdk = "7"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
+        dotnetPublish {
+            name = "Publish console"
+            projects = "Clock.Console/Clock.Console.csproj"
+            runtime = "win-x64"
+            outputDir = "bin/Clock.Console/win-x64"
+            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
+        }
     }
 })
 
