@@ -348,7 +348,6 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
     steps {
         dotnetTest {
             name = "Test Win"
-            enabled = false
             projects = "Clock.Tests/Clock.Tests.csproj"
             sdk = "7"
             dockerImage = "mcr.microsoft.com/dotnet/sdk:7.0"
