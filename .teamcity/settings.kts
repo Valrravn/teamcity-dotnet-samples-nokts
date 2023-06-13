@@ -380,7 +380,7 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
     }
 
     requirements {
-        equals("system.agent.name", "Ubuntu-20.04-Arm64-i")
+        startsWith("system.agent.name", "Ubuntu-20.04")
     }
 })
 
