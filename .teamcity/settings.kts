@@ -375,6 +375,7 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
 
     features {
         parallelTests {
+            enabled = false
             numberOfBatches = 3
         }
     }
