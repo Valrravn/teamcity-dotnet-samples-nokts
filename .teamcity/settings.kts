@@ -378,6 +378,10 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
             numberOfBatches = 3
         }
     }
+
+    requirements {
+        equals("system.agent.name", "Ubuntu-20.04-Arm64-i")
+    }
 })
 
 object Building_RunTestsLinux : BuildType({
