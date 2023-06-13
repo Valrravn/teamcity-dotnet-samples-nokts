@@ -378,6 +378,10 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
             numberOfBatches = 3
         }
     }
+
+    requirements {
+        matches("teamcity.agent.jvm.os.family", "Windows")
+    }
 })
 
 object Building_RunTestsLinux : BuildType({
