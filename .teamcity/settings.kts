@@ -350,6 +350,8 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
             name = "Test Win"
             projects = "Clock.Tests/Clock.Tests.csproj"
             sdk = "7"
+            dockerImage = "mcr.microsoft.com/dotnet/sdk:7.0"
+            dockerImagePlatform = DotnetTestStep.ImagePlatform.Windows
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
         dotnetTest {
