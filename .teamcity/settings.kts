@@ -380,7 +380,7 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
     }
 
     requirements {
-        startsWith("teamcity.agent.name", "Ubuntu-20.04")
+        contains("teamcity.agent.name", "Ubuntu-20.04")
     }
 })
 
