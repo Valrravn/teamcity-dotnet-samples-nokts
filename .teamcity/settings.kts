@@ -147,6 +147,7 @@ object DeployAll : BuildType({
 object Building : Project({
     name = "Building Configurations"
 
+    buildType(Building_BuildingWinDesktopWithParallelTesting)
     buildType(Building_BuildConsoleWebLinuxX64)
     buildType(Building_BuildDesktopWindows)
     buildType(Building_RunTestsLinux)
@@ -335,6 +336,10 @@ object Building_BuildDesktopWindows : BuildType({
     requirements {
         matches("teamcity.agent.jvm.os.family", "Windows")
     }
+})
+
+object Building_BuildingWinDesktopWithParallelTesting : BuildType({
+    name = "Building Win Desktop with Parallel Testing"
 })
 
 object Building_RunTestsLinux : BuildType({
