@@ -381,6 +381,7 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
 
     requirements {
         contains("teamcity.agent.name", "Ubuntu")
+        matches("teamcity.agent.jvm.os.family", "Linux")
     }
 })
 
