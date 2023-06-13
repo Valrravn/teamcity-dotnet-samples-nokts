@@ -344,6 +344,15 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
     vcs {
         root(DslContext.settingsRoot)
     }
+
+    steps {
+        dotnetTest {
+            name = "Test Win"
+            projects = "Clock.Tests/Clock.Tests.csproj"
+            sdk = "7"
+            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
+        }
+    }
 })
 
 object Building_RunTestsLinux : BuildType({
