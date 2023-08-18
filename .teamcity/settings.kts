@@ -335,7 +335,7 @@ object Building_BuildDesktopWindows : BuildType({
     }
 
     requirements {
-        matches("teamcity.agent.jvm.os.family", "Windows")
+        matches("teamcity.agent.jvm.os.family", "Windows|Mac OS")
     }
 })
 
