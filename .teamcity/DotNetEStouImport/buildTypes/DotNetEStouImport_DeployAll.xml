@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Deploy All</name>
+  <description />
+  <settings>
+    <options>
+      <option name="allowPersonalBuildTriggering" value="false" />
+      <option name="buildConfigurationType" value="DEPLOYMENT" />
+      <option name="maximumNumberOfBuilds" value="1" />
+    </options>
+    <parameters>
+      <param name="system.deployall.prompt" value="false" spec="checkbox label='Confirm the &quot;Build All&quot; configuration run' description='Please avoid excessive Deploy All runs due to significant resources required to run this chain' display='prompt' checkedValue='true' uncheckedValue='false' readOnly='true'" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_1" name="Confirmation" type="simpleRunner">
+        <conditions>
+          <equals name="deployall.prompt" value="true" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[echo "%teamcity.build.triggeredBy.username% triggered the DEPLOY ALL configuration"
+echo "Prompt is: %system.deployall.prompt%"
+
+$Prompt = "%system.deployall.prompt%%"
+
+if ($BuildMode -eq false) {
+  blablabla wrong code stops the build
+}
+
+echo "Build cancelled"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="DotNetEStouImport_DeploymentConfigsProject_DeployConsoleLinux">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="DotNetEStouImport_DeploymentConfigsProject_DeployConsoleWindows">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="DotNetEStouImport_DeploymentConfigsProject_DeployWebLinux">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="DotNetEStouImport_DeploymentConfigsProject_DeployWebWindows">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
