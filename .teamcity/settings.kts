@@ -1,5 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildFeatures.dockerSupport
+import jetbrains.buildServer.configs.kotlin.buildFeatures.dockerRegistryConnections
 import jetbrains.buildServer.configs.kotlin.buildFeatures.parallelTests
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.DockerCommandStep
@@ -35,7 +35,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2023.05"
+version = "2024.12"
 
 project {
 
@@ -168,7 +168,6 @@ object Building_Build : BuildType({
             name = "Test (Win)"
             projects = "Clock.Tests/Clock.Tests.csproj"
             sdk = "7"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
     }
 
@@ -204,14 +203,12 @@ object Building_BuildConsoleWebLinuxX64 : BuildType({
             runtime = "linux-x64"
             outputDir = "bin/Clock.Console/linux-x64"
             args = "/p:PublishTrimmed=true /p:PublishSingleFile=true"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
         dotnetPublish {
             name = "Build web"
             projects = "Clock.Web/Clock.Web.csproj"
             runtime = "linux-x64"
             outputDir = "bin/Clock.Web/linux-x64"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
     }
 
@@ -252,14 +249,12 @@ object Building_BuildConsoleWebWinX64 : BuildType({
             projects = "Clock.Console/Clock.Console.csproj"
             runtime = "win-x64"
             outputDir = "bin/Clock.Console/win-x64"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
         dotnetPublish {
             name = "Build web"
             projects = "Clock.Web/Clock.Web.csproj"
             runtime = "win-x64"
             outputDir = "bin/Clock.Web/win-x64"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
     }
 
@@ -314,7 +309,6 @@ object Building_BuildDesktopWindows : BuildType({
             version = DotnetMsBuildStep.MSBuildVersion.V16
             targets = "Restore;Rebuild;Publish"
             sdk = "7"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
     }
 
@@ -354,7 +348,6 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
             projects = "Clock.Tests/Clock.Tests.csproj"
             sdk = "7"
             dockerImage = "mcr.microsoft.com/dotnet/sdk:7.0"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
         dotnetTest {
             name = "Test Linux"
@@ -363,7 +356,6 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
             sdk = "7"
             dockerImage = "mcr.microsoft.com/dotnet/sdk:7.0"
             dockerImagePlatform = DotnetTestStep.ImagePlatform.Linux
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
         dotnetPublish {
             name = "Publish console"
@@ -371,13 +363,21 @@ object Building_BuildingWinDesktopWithParallelTesting : BuildType({
             runtime = "win-x64"
             outputDir = "bin/Clock.Console/win-x64"
             dockerImage = "mcr.microsoft.com/dotnet/sdk:7.0"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
+        }
+        script {
+            name = "Save batches"
+            id = "Save_batches"
+            scriptContent = """
+                cat output.txt
+                echo "%system.teamcity.build.parallelTests.excludesFile%" > output.txt
+            """.trimIndent()
         }
     }
 
     features {
         parallelTests {
             numberOfBatches = 4
+            separateArtifacts = false
         }
     }
 
@@ -402,7 +402,6 @@ object Building_RunTestsLinux : BuildType({
             projects = "Clock.Tests/Clock.Tests.csproj"
             dockerImage = "mcr.microsoft.com/dotnet/sdk:7.0"
             dockerImagePlatform = DotnetTestStep.ImagePlatform.Linux
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
     }
 
@@ -482,7 +481,7 @@ object DeploymentConfigsProject_DeployConsoleLinux : BuildType({
     }
 
     features {
-        dockerSupport {
+        dockerRegistryConnections {
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_5"
             }
@@ -545,7 +544,7 @@ object DeploymentConfigsProject_DeployConsoleWindows : BuildType({
     }
 
     features {
-        dockerSupport {
+        dockerRegistryConnections {
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_5"
             }
@@ -608,7 +607,7 @@ object DeploymentConfigsProject_DeployWebLinux : BuildType({
     }
 
     features {
-        dockerSupport {
+        dockerRegistryConnections {
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_5"
             }
@@ -671,7 +670,7 @@ object DeploymentConfigsProject_DeployWebWindows : BuildType({
     }
 
     features {
-        dockerSupport {
+        dockerRegistryConnections {
             cleanupPushedImages = true
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_5"
